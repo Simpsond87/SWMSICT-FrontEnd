@@ -11,7 +11,7 @@ import './style.css';
 import './styleM.css';
 
 export default class SignupBox extends React.PureComponent {
-<<<<<<< HEAD
+
   constructor(){
     super();
     this.state = {
@@ -22,6 +22,20 @@ export default class SignupBox extends React.PureComponent {
       password: ""
     }
   };
+  getSessionData = () => {
+    let data = {};
+    data.userID = 1;
+    data.minInvestment = sessionStorage.getItem('minInvestment');
+    data.riskLevel = sessionStorage.getItem('riskLevel');
+    data.isStock = sessionStorage.getItem('isStock');
+    data.isBond = sessionStorage.getItem('isBond');
+    data.isMutualFund = sessionStorage.getItem('isMutualFund');
+    data.isETF = sessionStorage.getItem('isETF');
+    data.isIndexFund = sessionStorage.getItem('isIndexFund');
+    data.isRetirement = sessionStorage.getItem('isRetirement');
+
+    return data;
+  }
   handleFirstName = (event) => {
     this.setState({
       firstName: event.target.value
@@ -126,23 +140,23 @@ export default class SignupBox extends React.PureComponent {
       return (
         <div className="signUpBox">
           <div className="signUpHeader">
-            <p> &nbsp;
-              <div className="closeX">
+            <div className="closeX">
+              <p>
                   <FaClose className="x" onClick={this.props.toggleSignUp}/>
-              </div>
-            </p>
+              </p>
+            </div>
           </div>
           <br/>
           <div className="signUpContent">
             <img src={require("../../photos/signup-name.svg")}/>
-            <input className="input" type="text" name="firstName" placeholder="First" onChange={this.handleFirstName}></input>
-            <input className="input" type="text" name="lastName" placeholder="Last" onChange={this.handleLastName}></input>
+            <input className="signUpInput" type="text" name="firstName" placeholder="First" onChange={this.handleFirstName}></input>
+            <input className="signUpInput" type="text" name="lastName" placeholder="Last" onChange={this.handleLastName}></input>
             <img src={require("../../photos/signup-email.svg")}/>
-            <input type="text" className="input" name="email" placeholder="Email" onChange={this.handleEmail}></input>
+            <input type="text" className="signUpInput" name="email" placeholder="Email" onChange={this.handleEmail}></input>
             <img src={require("../../photos/signup-phone.svg")}/>
-            <input type="text" className="input" name="phone" placeholder="Phone"  onChange={this.handlePhoneNumber}></input>
+            <input type="text" className="signUpInput" name="phone" placeholder="Phone"  onChange={this.handlePhoneNumber}></input>
             <img src={require("../../photos/signup-password.svg")}/>
-            <input type="password" className="input" name="password" placeholder="Password" onChange={this.handlePassword}></input>
+            <input type="password" className="signUpInput" name="password" placeholder="Password" onChange={this.handlePassword}></input>
             <div>
               <input type="button" value="Create Account" className="signUpButton" onClick={this.signUp}></input>
             </div>
@@ -155,38 +169,6 @@ export default class SignupBox extends React.PureComponent {
        <div></div>
      )
     }
-=======
-  render() {
-
-    return (
-      <div className="signUpBox">
-        <div className="signUpHeader">
-          <p> &nbsp;
-            <div className="closeX">
-                <FaClose className="x"/>
-            </div>
-          </p>
-        </div>
-        <br/>
-        <div className="signUpContent">
-          <img src={require("../../photos/signup-name.svg")}/>
-          <div className="firstLast">
-            <input className="firstNameInput" type="text" name="firstName" placeholder="First"></input>
-            <input className="lastNameInput" type="text" name="lastName" placeholder="Last"></input>
-          </div>
-          <img src={require("../../photos/signup-email.svg")}/>
-          <input type="text" className="signUpInput" name="email" placeholder="Email"></input>
-          <img src={require("../../photos/signup-phone.svg")}/>
-          <input type="text" className="signUpInput" name="phone" placeholder="Phone"></input>
-          <img src={require("../../photos/signup-password.svg")}/>
-          <input type="password" className="signUpInput" name="password" placeholder="Password"></input>
-          <div>
-            <input type="button" value="Create Account" className="signUpButton"></input>
-          </div>
-        </div>
-      </div>
-    );
->>>>>>> 448590ccfb2f9c2bbd0edad0424a664c5b3b189f
   }
 }
 

@@ -1,6 +1,5 @@
 /* UserInfo Styles */
 
-<<<<<<< HEAD
 .divTest {
   border: 2px solid #000;
   width: 10px;
@@ -10,8 +9,6 @@
   border: 1px solid #f00;
 }
 
-=======
->>>>>>> 448590ccfb2f9c2bbd0edad0424a664c5b3b189f
 .container {
   display:flex;
   flex-direction:column;

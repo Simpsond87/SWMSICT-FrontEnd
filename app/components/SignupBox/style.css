@@ -2,40 +2,19 @@
 @import url('https://fonts.googleapis.com/css?family=Roboto');
 
 .signUpBox {
-<<<<<<< HEAD
-  width: 520px;
-  height: 570px;
-  border-radius: 10px;
-  z-index: 10;
-  border: 0px solid rgba(255, 255, 255, 1);
-  background: rgba(255, 255, 255, 1);
-  position: absolute;
-  top:30%;
-  left:30%;
-=======
-  margin-top:100px;
-  margin-left: auto;
-  margin-right: auto;
   width: 450px;
   height: 570px;
   border-radius: 10px;
   z-index: 10000;
   border: 0px solid rgba(255, 255, 255, 1);
-  background: rgba(255, 255, 255, .7);
->>>>>>> 448590ccfb2f9c2bbd0edad0424a664c5b3b189f
+  background: rgba(255, 255, 255, 1);
+  position: absolute;
+  top: 30%;
+  right:40%;
 }
 html, p {
   font-family: 'Roboto', sans-serif;
 }
-<<<<<<< HEAD
-=======
-/*.signUpHeader {
-  background: rgba(128, 128, 128, .9);
-  border-top-right-radius: 10px;
-  border-top-left-radius: 10px;
-  border-bottom: 1px solid black;
-}*/
->>>>>>> 448590ccfb2f9c2bbd0edad0424a664c5b3b189f
 .signUpHeader p {
   padding: 0 5px;
   padding-bottom: 5px;
@@ -59,17 +38,11 @@ html, p {
  align-items: center;
  font-size: 1.9em;
  text-align: center;
-<<<<<<< HEAD
-}
-
-.input {
-=======
  padding-left:30px;
  padding-right:30px;
 }
 
 .signUpInput {
->>>>>>> 448590ccfb2f9c2bbd0edad0424a664c5b3b189f
   width: 100%;
   border-top: none;
   border-left: none;
@@ -84,20 +57,12 @@ html, p {
   color: rgba(0, 0, 0, .7);
 }
 
-<<<<<<< HEAD
-.input::placeholder {
-=======
 .signUpInput::placeholder {
->>>>>>> 448590ccfb2f9c2bbd0edad0424a664c5b3b189f
   color: rgba(128, 128, 128, .85);
   font-weight: lighter;
 }
 
-<<<<<<< HEAD
-.input:focus {
-=======
 .signUpInput:focus {
->>>>>>> 448590ccfb2f9c2bbd0edad0424a664c5b3b189f
   outline: none;
 }
 @keyframes bounce {
@@ -114,15 +79,6 @@ html, p {
 }
 
 .firstLast {
-<<<<<<< HEAD
-  align-items: center;
-  justify-content: center;
-  width:auto;
-}
-
-.firstNameInput{
-  width: auto;
-=======
   display:flex;
   width:100%;
   align-items: center;
@@ -131,7 +87,6 @@ html, p {
 
 .firstNameInput{
   width: 50%;
->>>>>>> 448590ccfb2f9c2bbd0edad0424a664c5b3b189f
   border-top: none;
   border-left: none;
   border-right: none;
@@ -156,11 +111,7 @@ html, p {
 }
 
 .lastNameInput{
-<<<<<<< HEAD
-  width:40%;
-=======
   width:50%;
->>>>>>> 448590ccfb2f9c2bbd0edad0424a664c5b3b189f
   border-top: none;
   border-left: none;
   border-right: none;

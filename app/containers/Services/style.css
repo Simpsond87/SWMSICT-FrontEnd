@@ -30,10 +30,7 @@
   animation-name: fadein;
   animation-duration: 3s;
 }
-<<<<<<< HEAD
-=======
 
->>>>>>> 448590ccfb2f9c2bbd0edad0424a664c5b3b189f
 @-webkit-keyframes fadein {
     from { opacity: 0; }
     to   { opacity: .8; }
@@ -98,22 +95,15 @@ margin-bottom: 10px;
 .servicesInfo {
   font-size: 1.4em;
   color: rgba(50, 51,70,1);
-<<<<<<< HEAD
-  background-color:#ddd;
-=======
-  background-color:rgba(238,188,165,.5);
->>>>>>> 448590ccfb2f9c2bbd0edad0424a664c5b3b189f
+  background-color:rgba(238,188,165,.4);
   padding-left:200px;
   padding-right:200px;
   padding-top: 90px;
   padding-bottom: 90px;
 }
-<<<<<<< HEAD
-=======
 
 .servicesInfo h2 {
   text-align: center;
   color: rgba(50, 51,70,.8);
   font-size: 1.8em;
 }
->>>>>>> 448590ccfb2f9c2bbd0edad0424a664c5b3b189f

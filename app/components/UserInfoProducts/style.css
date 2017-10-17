@@ -44,10 +44,7 @@ font-family: sans-serif;
 .checkBox {
   display:flex;
   width: 40px;
-<<<<<<< HEAD
   height: 40px;
-=======
->>>>>>> 448590ccfb2f9c2bbd0edad0424a664c5b3b189f
   border: 2px solid white;
   border-radius: 5px;
   float:left;
@@ -65,33 +62,30 @@ font-family: sans-serif;
 .userInfoProducts input[type="button"] {
   width:320px;
   display: inline-block;
-	padding: 10px 14px;
+        padding: 10px 14px;
   margin: 40px;
-	color: rgba(255,255,255, .8);
-	border: 3.0px solid rgba(255,255,255, .8);
-	text-decoration: none;
-	font-size: .6em;
-	line-height: 120%;
-	background-color: rgba(255,255,255, 0);
-	border-radius: 6px;
-	transition: 400ms ease;
+        color: rgba(255,255,255, .8);
+        border: 3.0px solid rgba(255,255,255, .8);
+        text-decoration: none;
+        font-size: .6em;
+        line-height: 120%;
+        background-color: rgba(255,255,255, 0);
+        border-radius: 6px;
+        transition: 400ms ease;
   font-weight: normal;
   outline: none;
-	cursor: pointer;
+        cursor: pointer;
   align-items: center;
 }
 
 .userInfoProducts input[type="button"]:hover {
   background-color:rgba(201, 177, 155, .9);
-	color: rgba(255,255,255, 1);
+        color: rgba(255,255,255, 1);
   border: 3px solid rgba(0, 127, 0, 0);
 }
-<<<<<<< HEAD
 .stockCheck {
   display: block;
 }
 .indexFundsCheck {
   display: block;
 }
-=======
->>>>>>> 448590ccfb2f9c2bbd0edad0424a664c5b3b189f

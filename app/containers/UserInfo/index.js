@@ -1,30 +1,17 @@
 /*
-<<<<<<< HEAD
 *
 * UserInfo
 *
 */
-=======
- *
- * UserInfo
- *
- */
->>>>>>> 448590ccfb2f9c2bbd0edad0424a664c5b3b189f
 
 import React from 'react';
 import Helmet from 'react-helmet';
 import Navbar from 'components/Navbar';
-<<<<<<< HEAD
 
 import UserInfoContribution from 'components/UserInfoContribution';
 import UserInfoRisk from 'components/UserInfoRisk';
 import UserInfoProducts from 'components/UserInfoProducts';
 
-=======
-import UserInfoContribution from 'components/UserInfoContribution';
-import UserInfoRisk from 'components/UserInfoRisk';
-import UserInfoProducts from 'components/UserInfoProducts';
->>>>>>> 448590ccfb2f9c2bbd0edad0424a664c5b3b189f
 import './style.css';
 import './styleM.css';
 
@@ -32,7 +19,6 @@ export default class UserInfo extends React.PureComponent {
   constructor() {
     super();
     this.state = {
-<<<<<<< HEAD
       userID: "",
       riskLevel: "",
       minInvestment: 0,
@@ -63,23 +49,26 @@ export default class UserInfo extends React.PureComponent {
     this.setState ({
       minInvestment:document.getElementById('dollar').value
     })
+    sessionStorage.setItem('minInvestment', document.getElementById('dollar').value);
   }
-
   handleRiskLevel = (event) => {
     this.setState ({
       riskLevel:event.target.value
     })
+    sessionStorage.setItem('riskLevel', event.target.value);
   }
   handleStocks = (event) => {
     if (this.state.isStock == 0) {
       this.setState ({
         isStock: 1
       })
+      sessionStorage.setItem('isStock', 1);
     }
     else {
       this.setState({
         isStock: 0
       })
+      sessionStorage.setItem('isStock', 0);
     }
   }
 
@@ -88,11 +77,13 @@ export default class UserInfo extends React.PureComponent {
       this.setState ({
         isBond: 1
       })
+      sessionStorage.setItem('isBond', 1);
     }
     else {
       this.setState({
         isBond: 0
       })
+      sessionStorage.setItem('isBond', 0);
     }
   }
 
@@ -101,11 +92,13 @@ export default class UserInfo extends React.PureComponent {
       this.setState ({
         isMutualFund: 1
       })
+      sessionStorage.setItem('isMutualFund', 1);
     }
     else {
       this.setState({
         isMutualFund: 0
       })
+      sessionStorage.setItem('isMutualFund', 0);
     }
   }
 
@@ -114,11 +107,13 @@ export default class UserInfo extends React.PureComponent {
       this.setState ({
         isETF: 1
       })
+      sessionStorage.setItem('isETF', 1);
     }
     else {
       this.setState({
         isETF: 0
       })
+      sessionStorage.setItem('isETF', 0);
     }
   }
 
@@ -127,11 +122,13 @@ export default class UserInfo extends React.PureComponent {
       this.setState ({
         isIndexFund: 1
       })
+      sessionStorage.setItem('isIndexFund', 1);
     }
     else {
       this.setState({
         isIndexFund: 0
       })
+      sessionStorage.setItem('isIndexFund', 0);
     }
   }
 
@@ -140,11 +137,13 @@ export default class UserInfo extends React.PureComponent {
       this.setState ({
         isRetirement: 1
       })
+      sessionStorage.setItem('isRetirement', 1);
     }
     else {
       this.setState({
         isRetirement: 0
       })
+      sessionStorage.setItem('isRetirement', 0);
     }
   }
 
@@ -176,26 +175,12 @@ export default class UserInfo extends React.PureComponent {
 
 
 
-=======
-      showUserInfoContribution: true,
-      showUserInfoRisk: false,
-      showUserInfoProducts: false
-    }
-  }
-  handleRisk = (event) => {
-
-  }
-
->>>>>>> 448590ccfb2f9c2bbd0edad0424a664c5b3b189f
   handleContinue1 = () => {
     this.setState({
       showUserInfoContribution: false,
       showUserInfoRisk: true
     })
-<<<<<<< HEAD
     this.handleMinInvestment();
-=======
->>>>>>> 448590ccfb2f9c2bbd0edad0424a664c5b3b189f
   }
 
   handleContinue2 = () => {
@@ -205,10 +190,7 @@ export default class UserInfo extends React.PureComponent {
     })
   }
   handleContinue3 = () => {
-<<<<<<< HEAD
     this.sendFormData();
-=======
->>>>>>> 448590ccfb2f9c2bbd0edad0424a664c5b3b189f
     this.context.router.push("/Results");
   }
 
@@ -227,11 +209,7 @@ export default class UserInfo extends React.PureComponent {
     {
       return (
         <div>
-<<<<<<< HEAD
           <UserInfoRisk handleContinue2={this.handleContinue2} handleRiskLevel={this.handleRiskLevel}/>
-=======
-          <UserInfoRisk handleContinue2={this.handleContinue2}/>
->>>>>>> 448590ccfb2f9c2bbd0edad0424a664c5b3b189f
         </div>
       )
     }
@@ -241,40 +219,22 @@ export default class UserInfo extends React.PureComponent {
     {
       return (
         <div>
-<<<<<<< HEAD
           <UserInfoProducts handleContinue3={this.handleContinue3} handleStocks={this.handleStocks} handleBonds={this.handleBonds} handleMutualFunds={this.handleMutualFunds} handleExTradeFunds={this.handleExTradeFunds} handleIndexFunds={this.handleIndexFunds} handleRetirement={this.handleRetirement}/>
-=======
-          <UserInfoProducts handleContinue3={this.handleContinue3}/>
->>>>>>> 448590ccfb2f9c2bbd0edad0424a664c5b3b189f
         </div>
       )
     }
   }
-<<<<<<< HEAD
 
-=======
->>>>>>> 448590ccfb2f9c2bbd0edad0424a664c5b3b189f
   render() {
     return (
       <div className="container userInfoBackground">
         <Helmet title="UserInfo" meta={[ { name: 'description', content: 'Description of UserInfo' }]}/>
-<<<<<<< HEAD
-=======
-
->>>>>>> 448590ccfb2f9c2bbd0edad0424a664c5b3b189f
         <header>
           <Navbar/>
         </header>
 
-<<<<<<< HEAD
 
-        <main>here: {this.state.minInvestment} / {this.state.riskLevel} <br/>
-        Stocks:{this.state.isStock}<br/>
-        Bonds:{this.state.isBond}<br/>
-        MF:{this.state.isMutualFund}<br/>
-        ETF:{this.state.isETF}<br/>
-        Retirement:{this.state.isRetirement}<br/>
-        Index Funds:{this.state.isIndexFund}<br/>
+        <main>
 
 
           {this.renderUserInfoContribution()}
@@ -285,16 +245,6 @@ export default class UserInfo extends React.PureComponent {
         <footer>
           <ul className="progressBar">
             <li className="active">CONTRIBUTION</li>
-=======
-        <main>
-          {this.renderUserInfoContribution()}
-          {this.renderUserInfoRisk()}
-          {this.renderUserInfoProducts()}
-        </main>
-        <footer>
-          <ul className="progressBar">
-            <li class="active">CONTRIBUTION</li>
->>>>>>> 448590ccfb2f9c2bbd0edad0424a664c5b3b189f
             <li>RISK TOLERANCE</li>
             <li>PRODUCTS</li>
           </ul><br/>

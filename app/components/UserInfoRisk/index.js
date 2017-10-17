@@ -19,7 +19,6 @@ export default class UserInfoRisk extends React.PureComponent {
             <div>risk tolerance?</div>
           </h1>
 
-<<<<<<< HEAD
 
           <div className="riskChoice">
               <label className="riskRadio">
@@ -28,15 +27,6 @@ export default class UserInfoRisk extends React.PureComponent {
                 <input type="radio" name="risk" value="2" onClick={this.props.handleRiskLevel} hidden/>Moderate</label>
               <label className="riskRadio">
                 <input type="radio" name="risk" value="1" onClick={this.props.handleRiskLevel} hidden/>Aggressive</label>
-=======
-          <div className="riskChoice">
-              <label className="riskRadio">
-                <input type="radio" name="risk" value="3" hidden/>Conservative</label>
-              <label className="riskRadio">
-                <input type="radio" name="risk" value="2" hidden/>Moderate</label>
-              <label className="riskRadio">
-                <input type="radio" name="risk" value="1" hidden/>Aggressive</label>
->>>>>>> 448590ccfb2f9c2bbd0edad0424a664c5b3b189f
           </div>
           <input type="button" value="Continue" onClick={this.props.handleContinue2}/>
         </div>

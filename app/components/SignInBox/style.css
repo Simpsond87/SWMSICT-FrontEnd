@@ -3,39 +3,21 @@
 @import url('https://fonts.googleapis.com/css?family=Roboto');
 
 .signInBox {
-<<<<<<< HEAD
   width: 380px;
-  height: 430px;
+  height: 380px;
   border-radius: 10px;
-  z-index: 10;
+  z-index: 10000;
   border: 0px solid rgba(255, 255, 255, 1);
   background: rgba(255, 255, 255, .9);
   animation-name: fadein;
   animation-duration: 2s;
   position: absolute;
   top: 30%;
-  left: 40%;
-  }
-  @keyframes fadein {
-    from { opacity: 0; }
-    to   { opacity: 1; }
-=======
-  margin-top:100px;
-  margin-left: auto;
-  margin-right: auto;
-  width: 380px;
-  height: 380px;
-  border-radius: 10px;
-  z-index: 10000;
-  border: 0px solid rgba(255, 255, 255, 1);
-  background: rgba(255, 255, 255, .7);
-  animation-name: fadein;
-  animation-duration: 2s;
+  left:40%;
   }
   @-webkit-keyframes fadein {
     from { opacity: 0; }
     to   { opacity: .8; }
->>>>>>> 448590ccfb2f9c2bbd0edad0424a664c5b3b189f
   }
 html, p {
   font-family: 'Roboto', sans-serif;
@@ -69,19 +51,12 @@ html, p {
  flex-direction: column;
  align-items: center;
  font-size: 1.9em;
-<<<<<<< HEAD
-}
-
-.input {
-  width: 80%;
-=======
  padding-left: 40px;
  padding-right: 40px;
 }
 
 .signInInput {
   width: 100%;
->>>>>>> 448590ccfb2f9c2bbd0edad0424a664c5b3b189f
   border-top: none;
   border-left: none;
   border-right: none;
@@ -95,19 +70,11 @@ html, p {
   font-weight: lighter;
 }
 
-<<<<<<< HEAD
-.input::placeholder {
-  color: rgba(128, 128, 128, .85);
-  font-weight: lighter;
-}
-.input:focus {
-=======
 .signInInput::placeholder {
   color: rgba(128, 128, 128, .85);
   font-weight: lighter;
 }
 .signInInput:focus {
->>>>>>> 448590ccfb2f9c2bbd0edad0424a664c5b3b189f
   outline: none;
 }
 @keyframes bounce {

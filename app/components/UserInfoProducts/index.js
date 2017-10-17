@@ -11,7 +11,6 @@ import './style.css';
 import './styleM.css';
 
 export default class UserInfoProducts extends React.PureComponent {
-<<<<<<< HEAD
   constructor () {
     super();
 
@@ -20,6 +19,8 @@ export default class UserInfoProducts extends React.PureComponent {
       showBondCheck: false
     }
   }
+
+
 
   renderStocksCheck = () => {
     if(this.state.showStocksCheck === true) {
@@ -102,27 +103,21 @@ export default class UserInfoProducts extends React.PureComponent {
     this.props.handleIndexFunds();
   }
 
-=======
->>>>>>> 448590ccfb2f9c2bbd0edad0424a664c5b3b189f
   render() {
     return (
       <div className="productsContainer">
         <div className="userInfoProducts">
           <h1>
             <div>Which investment products</div>
-            <div>interest you?</div>
+            <div>interest you?
+            </div>
           </h1>
           <div className="checkboxContainer">
             <div className="columnOne">
               <div className="stockBox">
                 <span>
-<<<<<<< HEAD
                   <div ref="checkBox" className="checkBox" onClick={this.handleStocksCheck}>
                   {this.renderStocksCheck()}
-=======
-                  <div className="checkBox">
-                    <FaCheck/>
->>>>>>> 448590ccfb2f9c2bbd0edad0424a664c5b3b189f
                   </div>
                   <div className="option">
                     Stocks
@@ -132,13 +127,8 @@ export default class UserInfoProducts extends React.PureComponent {
 
               <div className="bondBox">
                 <span>
-<<<<<<< HEAD
                   <div className="checkBox" onClick={this.handleBondsCheck}>
                     {this.renderBondsCheck()}
-=======
-                  <div className="checkBox">
-                    <FaCheck/>
->>>>>>> 448590ccfb2f9c2bbd0edad0424a664c5b3b189f
                   </div>
                   <div className="option">
                     Bonds
@@ -148,13 +138,8 @@ export default class UserInfoProducts extends React.PureComponent {
 
               <div className="mutualFundsBox">
                 <span>
-<<<<<<< HEAD
                   <div className="checkBox" onClick={this.handleMutualFundsCheck}>
                     {this.renderMutualFundsCheck()}
-=======
-                  <div className="checkBox">
-                    <FaCheck/>
->>>>>>> 448590ccfb2f9c2bbd0edad0424a664c5b3b189f
                   </div>
                   <div className="option">
                     Mutual Funds
@@ -166,13 +151,8 @@ export default class UserInfoProducts extends React.PureComponent {
             <div className="columnTwo">
               <div className="etfBox">
                 <span>
-<<<<<<< HEAD
                   <div className="checkBox" onClick={this.handleExTradeFundsCheck}>
                     {this.renderExTradeFundsCheck()}
-=======
-                  <div className="checkBox">
-                    <FaCheck/>
->>>>>>> 448590ccfb2f9c2bbd0edad0424a664c5b3b189f
                   </div>
                   <div className="option">
                     ETF
@@ -182,13 +162,8 @@ export default class UserInfoProducts extends React.PureComponent {
 
               <div className="retirementBox">
                 <span>
-<<<<<<< HEAD
                   <div className="checkBox" onClick={this.handleRetirementCheck}>
                     {this.renderRetirementCheck()}
-=======
-                  <div className="checkBox">
-                    <FaCheck/>
->>>>>>> 448590ccfb2f9c2bbd0edad0424a664c5b3b189f
                   </div>
                   <div className="option">
                     Retirement
@@ -198,13 +173,8 @@ export default class UserInfoProducts extends React.PureComponent {
 
               <div className="indexFundsBox">
                 <span>
-<<<<<<< HEAD
                   <div className="checkBox" onClick={this.handleIndexFundsCheck}>
                     {this.renderIndexFundsCheck()}
-=======
-                  <div className="checkBox">
-                    <FaCheck/>
->>>>>>> 448590ccfb2f9c2bbd0edad0424a664c5b3b189f
                   </div>
                   <div className="option">
                     Index Funds
