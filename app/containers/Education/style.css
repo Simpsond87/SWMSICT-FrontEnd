@@ -1,0 +1,209 @@
+/* Education Styles */
+
+.container {
+  display:flex;
+  flex-direction:column;
+  min-height:100vh;
+  position: relative;
+}
+
+.educationBanner {
+  background-image: url("../../photos/education.jpg");
+  height:600px;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.educationBanner h1 {
+<<<<<<< HEAD
+  font-size: 5.5em;
+  text-align: center;
+  margin-top: 140px;
+  color: rgba(248,250,242,.8);
+=======
+  font-size: 7.5em;
+  text-align: center;
+  margin-top: 140px;
+  color: rgba(248,250,242,.8);
+  animation-name: fadein;
+  animation-duration: 4s;
+}
+@-webkit-keyframes fadein {
+    from { opacity: 0; }
+    to   { opacity: .8; }
+>>>>>>> 448590ccfb2f9c2bbd0edad0424a664c5b3b189f
+}
+
+.educationBanner p {
+  font-size: 2em;
+  text-align: center;
+  margin-top: 10px;
+  color: rgba(248,250,242,.8);
+<<<<<<< HEAD
+  animation-name: fadein;
+  animation-duration: 4s;
+}
+@-webkit-keyframes fadein {
+    from { opacity: 0; }
+    to   { opacity: .8; }
+=======
+>>>>>>> 448590ccfb2f9c2bbd0edad0424a664c5b3b189f
+}
+
+.imageBoxes {
+  display: flex;
+  flex-direction: row;
+  background:#2F3650;
+  text-align: center;
+  padding-top: 95px;
+  padding-bottom: 95px;
+  color: rgba(248,250,242,.9);
+  font-size: 1.2em;
+}
+
+.imageBoxes h2 {
+  color: rgba(248,250,242,.9);
+  font-family: sans-serif;
+}
+
+.imageBoxes p {
+  color: rgba(248,250,242,.8);
+}
+.compoundInterestBox {
+<<<<<<< HEAD
+  margin-left: 200px;
+=======
+  margin-left: 125px;
+>>>>>>> 448590ccfb2f9c2bbd0edad0424a664c5b3b189f
+}
+
+.compoundInterestBox h2 {
+margin-top: 10px;
+margin-bottom: 10px;
+}
+
+.educationProductBox {
+<<<<<<< HEAD
+  margin-left: 100px;
+=======
+  margin-left: 70px;
+>>>>>>> 448590ccfb2f9c2bbd0edad0424a664c5b3b189f
+}
+
+.educationProductBox h2 {
+margin-top: 10px;
+margin-bottom: 10px;
+}
+
+.educationPerformanceBox {
+<<<<<<< HEAD
+  margin-left: 100px;
+=======
+  margin-left: 70px;
+>>>>>>> 448590ccfb2f9c2bbd0edad0424a664c5b3b189f
+}
+
+.educationPerformanceBox h2 {
+margin-top: 10px;
+margin-bottom: 10px;
+}
+
+.educationExpensesBox {
+<<<<<<< HEAD
+  margin-left: 100px;
+  margin-right: 200px;
+=======
+  margin-left: 70px;
+  margin-right: 125px;
+>>>>>>> 448590ccfb2f9c2bbd0edad0424a664c5b3b189f
+}
+
+.educationExpensesBox h2 {
+margin-top: 10px;
+margin-bottom: 10px;
+}
+
+.imageBoxes h2 {
+  font-size: 1.2em;
+}
+
+.imageBoxes p {
+  font-size: 1.2em;
+}
+
+.educationInfo {
+  font-size: 1.4em;
+<<<<<<< HEAD
+  color: #2F2D3A;
+  background-color:#ddd;
+=======
+  color: rgba(47, 54, 80,.8);
+  background-color:rgba(229,176,144,.2);
+>>>>>>> 448590ccfb2f9c2bbd0edad0424a664c5b3b189f
+  padding-left:200px;
+  padding-right:200px;
+  padding-top: 60px;
+  padding-bottom: 60px;
+}
+
+.startNowBox {
+  display: flex;
+  flex-direction: row;
+  background: #2F3650;
+  text-align: center;
+  padding-top: 95px;
+  padding-bottom: 95px;
+  padding-left: 580px;
+  padding-right: 580px;
+  color: rgba(255,255,255, .8);
+  font-size: 1.4em;
+  justify-content: center;
+}
+
+.startNowBox h2 {
+  color: rgba(255,255,255, .9);
+  font-family: sans-serif;
+}
+
+.startNowBox p {
+  color: rgba(255,255,255, .7);
+}
+
+.startNowButton input[type="button"] {
+  width:270px;
+  display: inline-block;
+	padding: 10px 14px;
+  margin: 40px;
+	color: rgba(255,255,255,1);
+<<<<<<< HEAD
+	border: 0px solid rgba(209, 118, 27, 1);
+	text-decoration: none;
+	font-size: 1.1em;
+	line-height: 130%;
+	background-color: rgba(209, 118, 27, .7);
+=======
+	border: 0px solid rgba(229,176,144, 1);
+	text-decoration: none;
+	font-size: 1.1em;
+	line-height: 130%;
+	background-color: rgba(229,176,144, .7);
+>>>>>>> 448590ccfb2f9c2bbd0edad0424a664c5b3b189f
+	border-radius: 6px;
+	transition: 400ms ease;
+  font-weight: normal;
+  outline: none;
+	cursor: pointer;
+}
+
+.startNowButton input[type="button"]:hover {
+<<<<<<< HEAD
+  background-color:rgba(209, 118, 27, 1);
+	color: rgba(255,255,255,1);
+  border: 0 solid rgba(209, 118, 27, 1);
+=======
+  background-color:rgba(229,176,144, 1);
+	color: rgba(255,255,255,1);
+  border: 0 solid rgba(229,176,144, 1);
+>>>>>>> 448590ccfb2f9c2bbd0edad0424a664c5b3b189f
+}

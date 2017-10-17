@@ -1,0 +1,167 @@
+/* Contact Styles */
+
+.container {
+  display:flex;
+  flex-direction:column;
+  min-height:100vh;
+}
+
+.contactBackground {
+  max-height: 100vh;
+  overflow-y:hidden;
+
+}
+.contactBanner {
+  background-color: rgba(47, 54, 80,1);
+  height:200px;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.contactBanner h1 {
+  font-size: 5em;
+  text-align: center;
+  color: rgba(248,250,242,.7);
+  animation-name: fadein;
+  animation-duration: 4s;
+  }
+  @-webkit-keyframes fadein {
+    from { opacity: 0; }
+    to   { opacity: .8; }
+  }
+
+.contactBanner p {
+  font-size: 1em;
+  text-align: center;
+  margin-top: 10px;
+  color: rgba(248,250,242,.8);
+  animation-name: fadein;
+  animation-duration: 4s;
+}
+@-webkit-keyframes fadein {
+    from { opacity: 0; }
+    to   { opacity: .8; }
+}
+
+.contactForm {
+  display: flex;
+  flex-direction: row;
+  background-color: rgba(47, 54, 80,1);
+  text-align: center;
+  padding-top: 10px;
+  padding-bottom: 15px;
+  color: rgba(248,250,242,1);
+  font-size: 1.1em;
+  width: 100%;
+  font-weight: lighter;
+}
+
+.contactInfo {
+  margin-left: 10px;
+  background-color: rgba(47, 54, 80,1);
+  margin-bottom: 10px;
+  width: 50%;
+<<<<<<< HEAD
+  font-size: 1.3em;
+=======
+  font-size: 1.2em;
+>>>>>>> 448590ccfb2f9c2bbd0edad0424a664c5b3b189f
+  padding-top: 20px;
+  padding-left: 70px;
+  color:rgba(248,250,242,.7);
+}
+
+.contactInfo p {
+  margin-bottom: 10px;
+  font-family:;
+}
+
+<<<<<<< HEAD
+=======
+.contactInfoPhone {
+  color: inherit;
+  text-decoration: none;
+}
+
+.contactInfoSocial img{
+  padding-left:25px;
+}
+
+.facebookLogo {
+  padding: 5px;
+}
+
+>>>>>>> 448590ccfb2f9c2bbd0edad0424a664c5b3b189f
+
+.contactInput {
+  margin-left: 10px;
+  background-color: rgba(47, 54, 80,1);
+  margin-bottom: 10px;
+  margin-right: 10px;
+  width: 50%;
+  padding-top: 20px;
+  padding-right: 70px;
+}
+
+.contactForm input[type="text"] {
+  width: 70%;
+  margin-bottom: 80px;
+  border: none;
+  border-bottom: 2px solid rgba(93, 147, 157, 1);
+  outline: none;
+  background: transparent;
+  color: #ddd;
+  font-size: 1.3em;
+  font-weight: lighter;
+}
+
+.contactForm ::placeholder {
+  color:rgba(255,255,255, .7);
+  font-weight: lighter;
+  padding-left: 5px;
+}
+
+.contactTextbox {
+  width: 70%;
+  margin-bottom: 20px;
+  border: 2px solid rgba(93, 147, 157, 1);
+  outline: none;
+  background: transparent;
+  color: #fff;
+  font-size: 1.3em;
+  border-radius: 8px;
+  font-weight: lighter;
+}
+
+.contactForm input[type="submit"] {
+  width:320px;
+  display: inline-block;
+  padding: 10px 14px;
+  color: rgba(255,255,255, .8);
+  border: 0px solid rgba(93, 147, 157, .1);
+  text-decoration: none;
+  line-height: 150%;
+  background-color: rgba(93, 147, 157, .2);
+  border-radius: 6px;
+  transition: 200ms ease;
+  font-weight: lighter;
+  outline: none;
+  cursor: pointer;
+  font-size: 1.3em;
+}
+
+.contactForm input[type="submit"]:hover {
+  background-color:rgba(93, 147, 157, .9);
+  color: #fff;
+  border: 0px solid rgba(93, 147, 157, .9);
+}
+
+.contactBottomBorder {
+  background: url("../../photos/contact-footer.jpg");
+  background-size: cover;
+  height: 600px;
+  display:flex;
+  justify-content: center;
+  align-items: center;
+}
