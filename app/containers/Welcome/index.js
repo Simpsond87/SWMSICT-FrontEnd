@@ -22,6 +22,15 @@ export default class Welcome extends React.PureComponent {
       showSignIn: false
     }
   }
+  componentWillMount() {
+    sessionStorage.setItem('userID', 0);
+    sessionStorage.setItem('isStock', 0);
+    sessionStorage.setItem('isBond', 0);
+    sessionStorage.setItem('isMutualFund', 0);
+    sessionStorage.setItem('isETF', 0);
+    sessionStorage.setItem('isIndexFund', 0);
+    sessionStorage.setItem('isRetirement', 0);
+  }
   goToSearch = () => {
     this.context.router.push("/UserInfo");
   }

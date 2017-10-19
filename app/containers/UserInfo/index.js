@@ -44,7 +44,6 @@ export default class UserInfo extends React.PureComponent {
     }
   }
 
-
   handleMinInvestment = (event) => {
     this.setState ({
       minInvestment:document.getElementById('dollar').value
@@ -101,7 +100,6 @@ export default class UserInfo extends React.PureComponent {
       sessionStorage.setItem('isMutualFund', 0);
     }
   }
-
   handleExTradeFunds = (event) => {
     if (this.state.isETF == 0) {
       this.setState ({
@@ -147,34 +145,6 @@ export default class UserInfo extends React.PureComponent {
     }
   }
 
-  sendFormData = () => {
-    let data = new FormData();
-
-    data.append('userID', 1);
-    data.append('riskLevel', this.state.riskLevel);
-    data.append('minInvestment', this.state.minInvestment);
-    data.append('isStock', this.state.isStock);
-    data.append('isBond', this.state.isBond);
-    data.append('isMutualFund', this.state.isMutualFund);
-    data.append('isETF', this.state.isETF);
-    data.append('isIndexFund', this.state.isIndexFund);
-    data.append('isRetirement', this.state.isRetirement);
-
-    fetch ('http://localhost:8000/api/saveSearchData',{
-      method: 'POST',
-      body: data
-    })
-    .then(function(response){
-      return response.json();
-    })
-    .then(function(json){
-      console.log(json.success);
-    })
-  }
-
-
-
-
   handleContinue1 = () => {
     this.setState({
       showUserInfoContribution: false,
@@ -192,6 +162,31 @@ export default class UserInfo extends React.PureComponent {
   handleContinue3 = () => {
     this.sendFormData();
     this.context.router.push("/Results");
+  }
+  sendFormData = () => {
+    let data = new FormData();
+    alert(sessionStorage.getItem('userID') + 'user id from sessions');
+
+    data.append('userID', sessionStorage.getItem('userID'));
+    data.append('riskLevel', sessionStorage.getItem('riskLevel'));
+    data.append('minInvestment', sessionStorage.getItem('minInvestment'));
+    data.append('isStock', sessionStorage.getItem('isStock'));
+    data.append('isBond', sessionStorage.getItem('isBond'));
+    data.append('isMutualFund', sessionStorage.getItem('isMutualFund'));
+    data.append('isETF', sessionStorage.getItem('isETF'));
+    data.append('isIndexFund', sessionStorage.getItem('isIndexFund'));
+    data.append('isRetirement', sessionStorage.getItem('isRetirement'));
+
+    fetch ('http://localhost:8000/api/saveSearchData',{
+      method: 'POST',
+      body: data
+    })
+    .then(function(response){
+      return response.json();
+    })
+    .then(function(json){
+      console.log(json.success);
+    })
   }
 
   renderUserInfoContribution = () => {
@@ -242,13 +237,6 @@ export default class UserInfo extends React.PureComponent {
           {this.renderUserInfoProducts()}
 
         </main>
-        <footer>
-          <ul className="progressBar">
-            <li className="active">CONTRIBUTION</li>
-            <li>RISK TOLERANCE</li>
-            <li>PRODUCTS</li>
-          </ul><br/>
-        </footer>
 
 
       </div>

@@ -21,12 +21,20 @@
        products:[],
        showWouldYouLike: true,
        showSignUp: false,
+       searchData:[],
        type: 'name',
-       order: 'asc'
+       order: 'asc',
+       physLoc: 'no',
+       specOff: 'no'
      }
    }
    componentWillMount() {
-     this.getSearchData();
+     if(sessionStorage.getItem('userID') != 0) {
+       this.getSearchData();
+     }
+     else {
+       this.getProductsFromSession();
+     }
    }
    closeWouldYouLike = () => {
      this.setState({
@@ -43,7 +51,7 @@
      let data = new FormData();
      let _this = this;
 
-     data.append('userID', 1);
+     data.append('userID', sessionStorage.getItem('userID'));
 
      fetch ('http://localhost:8000/api/collectSearchData',{
        method: 'POST',
@@ -58,31 +66,25 @@
        _this.setState ({
          searchData:json.searchData
        }, function() {
-         _this.getProducts(json.searchData, this.state.type, this.state.order);
+         _this.getProducts(json.searchData, this.state.type, this.state.order, this.state.physLoc, this.state.specOff);
        })
      }.bind(this))
    }
 
-
-   getProducts = (searchData, type = 'name', order = 'asc', physLoc = '0', specOff = '0') => {
+   getProductsFromSession = (type = 'name', order = 'asc', physLoc='no', specOff = 'no') => {
+     console.log('sessionLoc: ' + physLoc + ' sessionSpec: ' + specOff);
      let _this = this;
      let data = new FormData();
-     searchData = searchData[0];
 
-      data.append('userID', 1);
-      data.append('minInvestment', searchData.minInvestment);
-      data.append('riskLevel', searchData.riskLevel);
-      data.append('isStock', searchData.isStock);
-      data.append('isBond', searchData.isBond);
-      data.append('isMutualFund', searchData.isMutualFund);
-      data.append('isETF', searchData.isETF);
-      data.append('isIndexFund', searchData.isIndexFund);
-      data.append('isRetirement', searchData.isRetirement);
-
-
-      console.log('data');
-      console.log(searchData);
-
+     data.append('userID', '0');
+     data.append('minInvestment', sessionStorage.getItem('minInvestment'));
+     data.append('riskLevel', sessionStorage.getItem('riskLevel'));
+     data.append('isStock', sessionStorage.getItem('isStock'));
+     data.append('isBond', sessionStorage.getItem('isBond'));
+     data.append('isMutualFund', sessionStorage.getItem('isMutualFund'));
+     data.append('isETF', sessionStorage.getItem('isETF'));
+     data.append('isIndexFund', sessionStorage.getItem('isIndexFund'));
+     data.append('isRetirement', sessionStorage.getItem('isRetirement'));
 
      this.setState({
        displayOptions: []
@@ -96,10 +98,64 @@
        return response.json();
      })
      .then(function(json){
-       console.log('resultProducts');
+       console.log("TESTDATA:" + JSON.stringify(json));
+       /*console.log('resultProducts');
+       console.log(json.resultProducts);
+       console.log('messageNum');
+       console.log(json.messageNum);*/
+       _this.parseResults(data);
+       _this.setState({
+         searchData:json.searchData,
+         getProducts:json.resultProducts,
+         message:json.message,
+         messageNum:json.messageNum
+       })
+       _this.forceUpdate();
+     }.bind(this))
+
+   }
+
+   getProducts = (searchData, type = 'name', order = 'asc', physLoc = 'no', specOff = 'no') => {
+     let _this = this;
+     let data = new FormData();
+
+     if(sessionStorage.getItem('userID') != 0){
+     searchData = searchData[0];
+     }
+
+      data.append('userID', sessionStorage.getItem('userID'));
+      data.append('minInvestment', searchData.minInvestment);
+      data.append('riskLevel', searchData.riskLevel);
+      data.append('isStock', searchData.isStock);
+      data.append('isBond', searchData.isBond);
+      data.append('isMutualFund', searchData.isMutualFund);
+      data.append('isETF', searchData.isETF);
+      data.append('isIndexFund', searchData.isIndexFund);
+      data.append('isRetirement', searchData.isRetirement);
+
+
+      /*console.log('order: ' + order);
+      console.log('type: ' +  type);
+      console.log('phyLoc: ' + physLoc);
+      console.log('specOff: ' + specOff);
+*/
+
+     this.setState({
+       displayOptions: []
+     });
+
+     fetch ('http://localhost:8000/api/getProducts/'+type+'/'+order+'/'+physLoc+'/'+specOff,{
+       method: 'POST',
+       body: data
+     })
+     .then(function(response){
+       return response.json();
+     })
+     .then(function(json){
+       /*console.log('resultProducts');
        console.log(json.resultProducts);
        console.log('searchCriteria');
-       console.log(json.searchCriteria);
+       console.log(json.searchCriteria);*/
        _this.parseResults(json.searchCriteria);
        _this.setState({
          getProducts:json.resultProducts,
@@ -111,7 +167,7 @@
    }
 
    parseResults = (data) => {
-
+console.log('parse');
      let displayOptions = this.state.displayOptions;
      let minInvestment = '$' + data[1];
      let riskLevel = '';
@@ -150,27 +206,30 @@
      if(this.state.messageNum !== ''){
 
        if(this.state.messageNum == 1){
-         let options = <span>{this.state.displayOptions}</span>;
+         console.log(this.state.getProducts);
          return (
            <div>
-             <div>
-             Results: {this.state.getProducts.length}<br/>
-             <br/>
-               You searched on: Risk level ({this.state.riskLevel}), Minimum investment ({this.state.displayMinInvestment})
-             </div>
-             <div>
-               Products: {options}<br/><br/>
-             </div>
                {this.state.message}<br/><br/>
                {this.state.getProducts.map((product,index)=>(
-                   <div>
-                   <div><h3>{product.name}</h3></div>
-                   <div><h4>{product.summary}</h4></div>
-                   <span>Risk level: {product.riskLevel} </span><span>Minimum investment: ${product.minInvestment} </span><span>Type of investment: {product.isStock} / Fees: {product.fees} / Perf: {product.performance} {product.physicalLocationAvailable} {product.specialOffersAvailable}</span>
-                   <div><br/><br/></div>
+                 <div className="result" key={index}>
+                   <div className="resultLogo">
+                     <a href={product.website} target="_blank">
+                         <img className="logoImage" src={product.image}  title="Visit Website"/>
+                     </a>
                    </div>
-
-               ))}
+                   <div className="imageInfoBuffer">
+                   <div className="companyAndProductTitle"></div>
+                     <h2>{product.companyName} - {product.name}</h2>
+                   <div className="resultProductInfo"></div>
+                   <span className="resultProuctFont">Risk Level: {product.riskLevel} | Performance: {product.performance}% | Fees & Expenses: {product.fees}% | Minimum Investment: ${product.minInvestment} | Special Offers: {product.specialOffersAvailable} | Physical Location: {product.physicalLocationAvailable}</span>
+                   <hr className="resultBorder"/>
+                   <div className="resultDescription"></div>
+                     <p>
+                       {product.summary}
+                     </p>
+                   </div>
+                 </div>
+             ))}
            </div>
          )
        }
@@ -178,12 +237,6 @@
          console.log(this.state.messageNum + 'hiya');
          return (
            <div>
-           <div>
-             You searched on: Risk level ({this.state.displayRiskLevel}), Minimum investment (${this.state.searchCriteria[1]})
-           </div>
-           <div>
-             Products: {this.state.displayOptions}<br/><br/>
-           </div>
              {this.state.message}
            </div>
          )
@@ -195,36 +248,40 @@
        }
      }
    }
+
    filterByFee = (event) => {
     if(event.target.value == 1) {
-     this.getProducts(this.state.searchData, 'fees', 'asc', '0', '0');
+     this.getProducts(this.state.searchData, 'fees', 'desc', 'no', 'no');
     }
     else {
-      this.getProducts(this.state.searchData, 'fees', 'desc', '0', '0');
+      this.getProducts(this.state.searchData, 'fees', 'asc', 'no', 'no');
     }
   }
   filterByPerformance = (event) => {
     if(event.target.value == 1) {
-     this.getProducts(this.state.searchData, 'performance', 'asc', '0', '0');
+     this.getProducts(this.state.searchData, 'performance', 'desc', 'no', 'no');
     }
     else {
-      this.getProducts(this.state.searchData, 'performance', 'desc', '0', '0');
+      this.getProducts(this.state.searchData, 'performance', 'asc', 'no', 'no');
     }
   }
   filterByLocations = (event) => {
+    console.log('physLoc = ' + event.target.value);
     if(event.target.value == 1){
-      this.getProducts(this.state.searchData, 'name', 'asc', '1', '0');
+      this.getProducts(this.state.searchData, 'name', 'asc', '1', 'no');
     }
     else {
-      this.getProducts(this.state.searchData, 'name', 'asc', '0', '0');
+      this.getProducts(this.state.searchData, 'name', 'asc', '0', 'no');
     }
   }
   filterBySpecOff = (event) => {
+    console.log('specOff = ' + event.target.value);
     if(event.target.value == 1){
-      this.getProducts(this.state.searchData, 'name', 'asc', '0', '1');
+      console.log('equals One!');
+      this.getProducts(this.state.searchData, 'name', 'asc', 'no', '1');
     }
     else {
-      this.getProducts(this.state.searchData, 'name', 'asc', '0', '0');
+      this.getProducts(this.state.searchData, 'name', 'asc', 'no', '0');
     }
   }
   render() {
@@ -236,10 +293,11 @@
           <Navbar/>
         </header>
 
-	       <WouldYouLike closeWouldYouLike={this.closeWouldYouLike} 	toggleSignUp={this.toggleSignUp} openWouldYouLike={this.state.showWouldYouLike}/>
-         <SignupBox toggleSignUp={this.toggleSignUp} openSignUp={this.state.showSignUp}/>
+        <WouldYouLike closeWouldYouLike={this.closeWouldYouLike}        toggleSignUp={this.toggleSignUp} openWouldYouLike={this.state.showWouldYouLike}/>
+        <SignupBox toggleSignUp={this.toggleSignUp} openSignUp={this.state.showSignUp}/>
 
         <main>
+
           <section className="resultsBanner">
             <h1>
               Search Results
@@ -252,48 +310,58 @@
             </p>
           </section>
 
-          <div className="resultsFilters">
-            <div className="feesFilter">
-              <select>
-                <option value="" disabled selected>Fees & Expenses</option>
-                <option value="1">High to Low</option>
-                <option value="2">Low to High</option>
-              </select>
-            </div>
-            <div className="performanceFilter">
-              <select>
-                <option value="" disabled selected>Performance</option>
+          <section>
+            <div className="resultsFilters">
+              <div className="feesFilter">
+              <img src={require("../../photos/results-fees.svg")}/>
+                <select onChange={this.filterByFee} defaultValue="">
+                  <option value="">Fees & Expenses</option>
                   <option value="1">High to Low</option>
                   <option value="2">Low to High</option>
-              </select>
+                </select>
+              </div>
+              <div className="performanceFilter">
+              <img src={require("../../photos/results-performance.svg")}/>
+                <select onChange={this.filterByPerformance} defaultValue="">
+                  <option value="">Performance</option>
+                    <option value="1">High to Low</option>
+                    <option value="2">Low to High</option>
+                </select>
+              </div>
+              <div className="specialOffersFilter">
+              <img src={require("../../photos/results-specials.svg")}/>
+                <select onChange={this.filterBySpecOff} defaultValue="">
+                  <option value="">Special Offers</option>
+                  <option value="1">Yes</option>
+                  <option value="0">No</option>
+                </select>
+              </div>
+              <div className="locationFilter">
+              <img src={require("../../photos/results-location.svg")}/>
+                <select onChange={this.filterByLocations} defaultValue="">
+                  <option value="">Physical Location</option>
+                  <option value="1">Yes</option>
+                  <option value="0">No</option>
+                </select>
+              </div>
             </div>
-            <div className="specialOffersFilter">
-              <select>
-                <option value="" disabled selected>Special Offers</option>
-                <option value="Yes">Yes</option>
-                <option value="No">No</option>
-              </select>
-            </div>
-            <div className="locationFilter" default="SpecialOffers">
-              <select>
-                <option value="" disabled selected>Physical Location</option>
-                <option value="Yes">Yes</option>
-                <option value="No">No</option>
-              </select>
-            </div>
-          <div className="resultBox">
-            <div className="result">
-              <div className="companyTitle"></div>
-              <div className="productName"></div>
-              <div className="resultDescription"></div>
-            </div>
+          </section>
+
+        <section>
+          <div className="resultsBox">
+            <hr className="filterTitleDivider"/>
+
+            {this.renderResults()}
+
           </div>
-        </div>
+        </section>
+
       </main>
-      {this.renderResults()}
+
     </div>
     );
   }
+
 }
 
 Results.contextTypes = {

@@ -19,14 +19,15 @@
   font-size: 5.5em;
   text-align: center;
   margin-top: 140px;
-  color: rgba(248,250,242,.7);
+  color: rgba(248,250,242,.9);
+  /*Title Font*/font-family: 'Open Sans Condensed', sans-serif;
 }
 
 .servicesBanner p {
-  font-size: 1.4em;
+  font-size: 1.2em;
   text-align: center;
   margin-top: 10px;
-  color: rgba(248,250,242,.6);
+  color: rgba(248,250,242,.8);
   animation-name: fadein;
   animation-duration: 3s;
 }
@@ -41,23 +42,24 @@
   flex-direction: row;
   background:rgba(50, 51,70,1);
   text-align: center;
-  padding-top: 95px;
-  padding-bottom: 95px;
+  padding-top: 55px;
+  padding-bottom: 55px;
   color: rgba(248,250,242,.9);
-  font-size: 1.2em;
 }
 
 .servicesImageBoxes h2 {
   /*color: rgba(242, 185, 155,1);*/
-  font-family: sans-serif;
+  font-family: 'Roboto Condensed', sans-serif;
+  font-size: 1.2em;
 }
 
 .servicesImageBoxes p {
   color: rgba(248,250,242,.8);
+  font-size: 1.2em;
 }
 
 .goalBox {
-  margin-left: 200px;
+  margin-left: 160px;
 }
 
 .goalBox h2 {
@@ -66,7 +68,7 @@ margin-bottom: 10px;
 }
 
 .riskBox {
-  margin-left: 150px;
+  margin-left: 100px;
 }
 
 .riskBox h2 {
@@ -75,8 +77,8 @@ margin-bottom: 10px;
 }
 
 .productBox {
-  margin-right: 200px;
-  margin-left: 150px;
+  margin-right: 160px;
+  margin-left: 100px;
 }
 
 .productBox h2 {
@@ -95,7 +97,8 @@ margin-bottom: 10px;
 .servicesInfo {
   font-size: 1.4em;
   color: rgba(50, 51,70,1);
-  background-color:rgba(238,188,165,.4);
+  /*background-color:rgba(238,188,165,.3);*/
+  background-color: rgba(255,255,255,1);
   padding-left:200px;
   padding-right:200px;
   padding-top: 90px;

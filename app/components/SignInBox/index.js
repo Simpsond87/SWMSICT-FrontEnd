@@ -75,11 +75,12 @@ export default class SignInBox extends React.PureComponent {
       return (
         <div className="signInBox">
           <div className="signInHeader">
-            <p> &nbsp;
               <div className="closeX">
+                <p>
                   <FaClose className="x" onClick={this.props.toggleSignIn}/>
-              </div>
-            </p>
+                </p>
+                </div>
+
           </div>
           <br/>
           <div className="signInContent">

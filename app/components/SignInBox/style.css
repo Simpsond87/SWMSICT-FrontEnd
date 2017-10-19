@@ -1,48 +1,44 @@
 /* SignInBox Styles */
 
-@import url('https://fonts.googleapis.com/css?family=Roboto');
-
 .signInBox {
-  width: 380px;
-  height: 380px;
+  margin-top:100px;
+  margin-left: auto;
+  margin-right: auto;
+  width: 360px;
+  height: 365px;
   border-radius: 10px;
   z-index: 10000;
   border: 0px solid rgba(255, 255, 255, 1);
-  background: rgba(255, 255, 255, .9);
+  background: rgba(255, 255, 255, .7);
   animation-name: fadein;
   animation-duration: 2s;
-  position: absolute;
-  top: 30%;
-  left:40%;
   }
   @-webkit-keyframes fadein {
     from { opacity: 0; }
     to   { opacity: .8; }
   }
-html, p {
-  font-family: 'Roboto', sans-serif;
-}
+
 /*.signInHeader {
   background: rgba(128, 128, 128, .9);
   border-top-right-radius: 10px;
   border-top-left-radius: 10px;
   border-bottom: 1px solid black;
 }*/
-.singInHeader p {
+.signInHeader p {
   padding: 0 5px;
   padding-bottom: 5px;
   padding-top: 5px;
 }
-.closeX {
+.closeSignInX {
   float: right;
 }
-.x {
+.signInX {
   font-size: 20px;
-  color:rgba(128, 128, 128, .9);
-  margin-right: 8px;
+  color:rgba(47, 54, 80,.9);
+  margin-right: 3px;
 }
-.x:hover {
- color: rgba(128, 128, 128, .9);
+.signInX:hover {
+ color:rgba(47, 54, 80,1);
  animation: bounce 2s;
  animation-iteration-count: 1;
 }
@@ -64,15 +60,17 @@ html, p {
   text-align: center;
   height: 25px;
   font-size: 25px;
-  border-color: rgba(128, 128, 128, .7);
+  border-color: rgba(47, 54, 80,.5);
+  border-width: 1px;
   margin-top: 15px;
-  color: rgba(0, 0, 0, .7);
-  font-weight: lighter;
+  color: rgba(47, 54, 80,.9);
+  font-weight:lighter;
+  font-family: 'Roboto Condensed', sans-serif;
 }
 
 .signInInput::placeholder {
-  color: rgba(128, 128, 128, .85);
-  font-weight: lighter;
+  color: rgba(47, 54, 80,.55);
+  font-weight:lighter;
 }
 .signInInput:focus {
   outline: none;
@@ -95,22 +93,23 @@ html, p {
  display: inline-block;
  padding: 10px 14px;
  color: rgba(255,255,255, .8);
- border: 0px solid rgba(128, 128, 128, .8);
+ border: 0px solid rgba(47, 54, 80,.9);
  text-decoration: none;
  line-height: 100%;
- background-color: rgba(128, 128, 128, .8);
+ background-color: rgba(47, 54, 80,.9);
  border-radius: 6px;
  transition: 400ms ease;
  font-weight: lighter;
  outline: none;
  cursor: pointer;
  font-size: .8em;
+ font-family: 'Roboto Condensed', sans-serif;
 }
 
 .logInButton:hover {
-  background-color:rgba(128, 128, 128, 1);
+  background-color:rgba(47, 54, 80,1);
   color: #fff;
-  border: 0px solid rgba(128, 128, 128, 1);
+  border: 0px solid rgba(47, 54, 80,1);
 }
 
 .logInButton:active {

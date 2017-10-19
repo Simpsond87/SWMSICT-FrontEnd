@@ -1,37 +1,43 @@
 /* SignupBox Styles */
-@import url('https://fonts.googleapis.com/css?family=Roboto');
 
 .signUpBox {
+  margin-top:100px;
+  margin-left: auto;
+  margin-right: auto;
   width: 450px;
-  height: 570px;
+  height: 550px;
   border-radius: 10px;
   z-index: 10000;
   border: 0px solid rgba(255, 255, 255, 1);
-  background: rgba(255, 255, 255, 1);
-  position: absolute;
-  top: 30%;
-  right:40%;
+  background: rgba(255, 255, 255, .7);
 }
-html, p {
-  font-family: 'Roboto', sans-serif;
-}
+
+/*.signUpHeader {
+  background: rgba(128, 128, 128, .9);
+  border-top-right-radius: 10px;
+  border-top-left-radius: 10px;
+  border-bottom: 1px solid black;
+}*/
 .signUpHeader p {
   padding: 0 5px;
   padding-bottom: 5px;
   padding-top: 5px;
 }
-.closeX {
+
+.closeSignUpX {
   float: right;
 }
-.x {
+.signUpX {
   font-size: 20px;
-  color:rgba(128, 128, 128, .9);
+  color:rgba(47, 54, 80,.9);
+  margin-right: 3px;
 }
-.x:hover {
- color: rgba(128, 128, 128, .9);
+.signUpX:hover {
+ color:rgba(47, 54, 80,1);
  animation: bounce 2s;
  animation-iteration-count: 1;
 }
+
 .signUpContent {
  display: flex;
  flex-direction: column;
@@ -40,6 +46,10 @@ html, p {
  text-align: center;
  padding-left:30px;
  padding-right:30px;
+}
+
+.signUpContent p {
+ font-weight: lighter;
 }
 
 .signUpInput {
@@ -51,14 +61,17 @@ html, p {
   text-align: center;
   height: 25px;
   font-size: 25px;
-  border-color: rgba(128, 128, 128, .7);
+  font-weight: lighter;
+  border-color: rgba(47, 54, 80,.5);
+  border-width: 1px;
   margin-top: 15px;
   margin-bottom: 20px;
-  color: rgba(0, 0, 0, .7);
+  color: rgba(47, 54, 80,.9);
+  font-family: 'Roboto Condensed', sans-serif;
 }
 
 .signUpInput::placeholder {
-  color: rgba(128, 128, 128, .85);
+  color: rgba(47, 54, 80,.55);
   font-weight: lighter;
 }
 
@@ -94,15 +107,17 @@ html, p {
   text-align: center;
   height: 25px;
   font-size: 25px;
-  border-color: rgba(128, 128, 128, .7);
+  border-color: rgba(47, 54, 80,.5);
+  border-width: 1px;
   margin-top: 15px;
   margin-bottom: 20px;
-  color: rgba(0, 0, 0, .7);
+  color: rgba(47, 54, 80,.9);
   font-weight: lighter;
+  font-family: 'Roboto Condensed', sans-serif;
 }
 
 .firstNameInput::placeholder {
-  color: rgba(128, 128, 128, .85);
+  color: rgba(47, 54, 80,.55);
   font-weight: lighter;
 }
 
@@ -119,15 +134,17 @@ html, p {
   text-align: center;
   height: 25px;
   font-size: 25px;
-  border-color: rgba(128, 128, 128, .7);
+  border-color: rgba(47, 54, 80,.5);
+  border-width: 1px;
   margin-top: 15px;
   margin-bottom: 20px;
-  color: rgba(0, 0, 0, .7);
+  color: rgba(47, 54, 80,.9);
   font-weight: lighter;
+  font-family: 'Roboto Condensed', sans-serif;
 }
 
 .lastNameInput::placeholder {
-  color: rgba(128, 128, 128, .85);
+  color: rgba(47, 54, 80,.55);
   font-weight: lighter;
 }
 
@@ -140,10 +157,10 @@ html, p {
  display: inline-block;
  padding: 10px 14px;
  color: rgba(255,255,255, .8);
- border: 0px solid rgba(128, 128, 128, .8);
+ border: 0px solid rgba(47, 54, 80,.9);
  text-decoration: none;
  line-height: 100%;
- background-color: rgba(128, 128, 128, .8);
+ background-color: rgba(47, 54, 80,.9);
  border-radius: 6px;
  transition: 400ms ease;
  font-weight: lighter;
@@ -151,12 +168,13 @@ html, p {
  cursor: pointer;
  font-size: .8em;
  margin-top: 30px;
+ font-family: 'Roboto Condensed', sans-serif;
 }
 
 .signUpButton:hover {
-  background-color:rgba(128, 128, 128, 1);
+  background-color:rgba(47, 54, 80,1);
   color: #fff;
-  border: 0px solid rgba(128, 128, 128, 1);
+  border: 0px solid rgba(47, 54, 80,1);
 }
 
 .signUpButton:active {

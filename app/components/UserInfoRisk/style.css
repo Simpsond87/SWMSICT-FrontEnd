@@ -48,12 +48,32 @@
   cursor: pointer;
 }
 
+.riskRadioActive {
+  display:flex;
+  flex-direction:column;
+  align-items: center;
+  padding:15px;
+  width: 200px;
+  height: 200px;
+  border-radius:50%;
+  border:3px solid rgba(255,255,255, .3);
+  color: rgba(255,255,255, .8);
+  font-family: sans-serif;
+  font-weight: lighter;
+  justify-content: center;
+  margin:20px;
+  transition: 600ms ease;
+  cursor: pointer;
+  background: rgba(204, 203, 217, .9);
+}
+
 .riskRadio:hover {
   background-color:rgba(158, 191, 210, .7);
-        color: rgba(255,255,255, 1);
+  color: rgba(255,255,255, 1);
   animation: grow 1s;
   animation-iteration-count: 1;
 }
+
 
 @keyframes grow {
   90% {

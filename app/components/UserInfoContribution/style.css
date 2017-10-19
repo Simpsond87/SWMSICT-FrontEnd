@@ -10,9 +10,10 @@
   flex-direction: column;
   align-items: center;
   text-align: center;
-  font-size: 3.1em;
+  font-size: 2.5em;
   animation-name: fadein;
   animation-duration: 2s;
+  padding-bottom: 180px;
 }
 
 @-webkit-keyframes fadein {
@@ -20,14 +21,18 @@
     to   { opacity: .8; }
 }
 
+.userInfoContribution h1 {
+  font-weight:;
+}
+
 .userInfoContribution input[type="number"] {
-  width:60%;
+  width:80%;
   margin-top: 20px;
   background: rgba(255,255,255, 0);
   border-top: none;
   border-left: none;
   border-right: none;
-  border-width: thick;
+  border-width:3px;
   border-color: rgba(255,255,255, .9);
   color: rgba(255,255,255, .6);
   font-size: 1.5em;
@@ -37,24 +42,26 @@
 .userInfoContribution input[type="button"] {
   width:320px;
   display: inline-block;
-        padding: 10px 14px;
+	padding: 10px 14px;
   margin: 40px;
-        color: rgba(255,255,255, .8);
-        border: 3.0px solid rgba(255,255,255, .8);
-        text-decoration: none;
-        font-size: .6em;
-        line-height: 120%;
-        background-color: rgba(255,255,255, 0);
-        border-radius: 6px;
-        transition: 400ms ease;
+	color: rgba(255,255,255, .9);
+	border: 3.0px solid rgba(255,255,255, 0);
+	text-decoration: none;
+	font-size: .7em;
+	line-height: 120%;
+	background-color: rgba(201, 177, 155, .7);
+	border-radius: 6px;
+	transition: 400ms ease;
   font-weight: normal;
   outline: none;
-        cursor: pointer;
+	cursor: pointer;
+  align-items: center;
+  font-family: 'Roboto Condensed', sans-serif;
 }
 
 .userInfoContribution input[type="button"]:hover {
   background-color:rgba(201, 177, 155, .9);
-        color: rgba(255,255,255, 1);
+	color: rgba(255,255,255, 1);
   border: 3px solid rgba(0, 127, 0, 0);
 }
 

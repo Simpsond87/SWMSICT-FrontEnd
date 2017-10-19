@@ -24,7 +24,7 @@ export default class Services extends React.PureComponent {
           <div className="servicesBanner">
             <Navbar/>
             <h1>
-              Investing Made Simple
+              INVESTING MADE SIMPLE
             </h1>
             <p>
               Investing can be intimidating. It doesn't have to be.
@@ -46,7 +46,7 @@ export default class Services extends React.PureComponent {
             <label className="riskBox">
               <img src={require("../../photos/services-risk.svg")}/>
               <h2>
-                Determine Risk Tolerance
+                Determine Your Risk Tolerance
               </h2>
               <p>
                 Bacon ipsum dolor amet drumstick ham rump sirloin landjaeger tri-tip capicola prosciutto beef ribs shankle.

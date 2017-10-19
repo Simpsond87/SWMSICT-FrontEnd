@@ -46,7 +46,7 @@ export default class Navbar extends React.PureComponent {
     })
     .then(function(json) {
       sessionStorage.removeItem('token');
-      sessionStorage.removeItem('userID');
+      sessionStorage.setItem('userID', 0);
       alert("signed out");
     })
   }

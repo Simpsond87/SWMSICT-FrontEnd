@@ -12,7 +12,7 @@ import './styleM.css';
 
 export default class WouldYouLike extends React.PureComponent {
   render() {
-    if(this.props.openWouldYouLike === true)
+    if(this.props.openWouldYouLike === true && sessionStorage.getItem('userID') == "0")
     {
       return (
         <div className="wouldYouLikeBox">
