@@ -10,7 +10,7 @@
 {
 	background: url('../../photos/bg.jpg');
 	background-size: cover;
-	font-family: 'Yantramanav', sans-serif;
+	font-family: 'Roboto Condensed', sans-serif;anav', sans-serif;
   width: 100%;
   min-height: 100vh;
 }
@@ -54,7 +54,7 @@ h1
 	padding: 0;
 	font-weight: bold;
 	color: #ddd;
-  font-family: 'Yantramanav', sans-serif;
+  font-family: 'Roboto Condensed', sans-serif;anav', sans-serif;
   font-size: 25px;
 }
 
@@ -85,7 +85,7 @@ h1
 	background: rgba(255,255,255,.5);
 	cursor: pointer;
 	border-radius: 20px;
-  font-family: 'Yantramanav', sans-serif;
+  font-family: 'Roboto Condensed', sans-serif;anav', sans-serif;
   font-weight: bold;
 }
 .loginBox input[type="submit"]:hover
